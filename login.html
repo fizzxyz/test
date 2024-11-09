@@ -15,7 +15,7 @@
         .full-screen {
             display: flex;
             height: 100vh;
-            background-color: #d9d9d9;
+            flex-wrap: wrap;
         }
         .left-section {
             flex: 1;
@@ -25,10 +25,11 @@
             align-items: center;
             color: white;
             padding: 20px;
+            min-height: 100vh; /* Menjamin bagian ini memenuhi seluruh layar */
         }
         .left-section form {
             width: 100%;
-            max-width: 300px;
+            max-width: 350px;
         }
         .right-section {
             flex: 1;
@@ -58,6 +59,47 @@
             font-size: 0.9rem;
             color: white;
             margin-top: 10px;
+        }
+        @media (max-width: 768px) {
+            .full-screen {
+                flex-direction: column;
+                height: auto;
+            }
+            .left-section {
+                width: 100%;
+                padding: 15px;
+                min-height: 100vh; /* Mastiin bagian hitam memenuhi layar */
+            }
+            .right-section {
+                display: none; /* Sembunyiin bagian hytam di kanan layar pada perangkat mobile*/
+            }
+            .logo img {
+                width: 120px;
+            }
+            .btn-login {
+                padding: 15px;
+                font-size: 1rem;
+            }
+            .form-control {
+                padding: 12px;
+                font-size: 1rem;
+            }
+            .additional-links {
+                font-size: 0.8rem;
+                flex-direction: column;
+                align-items: center;
+            }
+            .additional-links a {
+                margin-top: 5px;
+            }
+        }
+        @media (max-width: 480px) {
+            .logo img {
+                width: 100px;
+            }
+            .btn-login {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -89,4 +131,3 @@
     </div>
 </body>
 </html>
-
